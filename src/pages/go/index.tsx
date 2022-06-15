@@ -17,7 +17,7 @@ export function GoPage() {
     const choosenSide = useRecoilValue(side)
     const setUserMove = useSetRecoilState(userMove)
     const setComputerMove = useSetRecoilState(computerMove)
-    // const noMoveSetVal = useRecoilValue(noMoveSet)
+    const noMoveSetVal = useRecoilValue(noMoveSet)
     const computerMoveAtom = useRecoilValue(computerMove)
     const userMoveAtom = useRecoilValue(userMove)
     const setCurrentGame = useSetRecoilState(currentGame)
@@ -49,7 +49,7 @@ export function GoPage() {
     
     function handleStormtrooperClick() {
         getComputerMove(choosenSide)
-        setUserMove("stormtropper")
+        setUserMove("stormtroopper")
         timeOut()
     }
     function handleTheForceClick() {
@@ -83,7 +83,7 @@ export function GoPage() {
                     const computerDarkMoves = [
                         "deathStar",
                         "redLightSaber",
-                        "stormtropper",]
+                        "stormtroopper",]
     
                 const selectedMove = computerDarkMoves[index] 
                 setComputerMove(selectedMove)

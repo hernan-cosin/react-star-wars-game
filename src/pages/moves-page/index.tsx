@@ -30,7 +30,19 @@ export function MovesPage() {
     useEffect(()=>{
         console.log("CURRENT GAME", currentGameAtom);
         const gano = whoWins(currentGameAtom)
-        
+
+        if (gano == 2 ) {
+            const sumar = [... computerWinVal]
+            sumar.push(1)
+            setСomputerWin(sumar)
+
+            if (choosenSide == "darkSide") {
+                setMessage("¡Perdiste! No elejiste a tiempo")
+            }
+            if (choosenSide == "theForce") {
+                setMessage("¡Perdiste! No elejiste a tiempo")
+            }
+        }
         if (gano == 1) {
             const sumar = [... userWinVal]
             sumar.push(1)
@@ -70,7 +82,12 @@ export function MovesPage() {
         // 0 = draw
         // -1 = computer win
         // 1 = user win
+        // 2 = user did'nt select 
 
+        if (currentGame.user == "" || currentGame.user == "null") {
+            console.log("user did'nt select");
+           return 2 
+        }
         if (currentGame.computer == "redLightSaber" && currentGame.user == "greenLightSaber") {
             console.log("Empate");
             
@@ -81,12 +98,12 @@ export function MovesPage() {
             
             return 0
         }
-        if (currentGame.computer == "hanSoloGun" && currentGame.user == "stormtropper") {
+        if (currentGame.computer == "hanSoloGun" && currentGame.user == "stormtroopper") {
             console.log("Empate");
             
             return 0
         }
-        if (currentGame.computer == "stormtropper" && currentGame.user == "hanSoloGun") {
+        if (currentGame.computer == "stormtroopper" && currentGame.user == "hanSoloGun") {
             console.log("Empate");
             
             return 0
@@ -106,7 +123,7 @@ export function MovesPage() {
             
             return 1
         }
-        if (currentGame.computer == "stormtropper" && currentGame.user == "theForce") {
+        if (currentGame.computer == "stormtroopper" && currentGame.user == "theForce") {
             console.log("Usuario");
             
             return 1
@@ -116,7 +133,7 @@ export function MovesPage() {
             
             return 1
         }
-        if (currentGame.computer == "theForce" && currentGame.user == "stormtropper") {
+        if (currentGame.computer == "theForce" && currentGame.user == "stormtroopper") {
             console.log("Usuario");
             
             return 1
@@ -131,6 +148,11 @@ export function MovesPage() {
             
             return 1
         }
+        if (currentGame.computer == "stormtrooper" && currentGame.user == "greenLightSaber") {
+            console.log("Usuario");
+            
+            return 1
+        }
         if (currentGame.computer == "deathStar" && currentGame.user == "greenLightSaber") {
             console.log("Computadora");
             
@@ -141,7 +163,7 @@ export function MovesPage() {
             
             return -1
         }
-        if (currentGame.computer == "stormtropper" && currentGame.user == "theForce") {
+        if (currentGame.computer == "stormtroopper" && currentGame.user == "theForce") {
             console.log("Computadora");
             
             return -1
@@ -156,7 +178,7 @@ export function MovesPage() {
             
             return -1
         }
-        if (currentGame.computer == "greenLightSaber" && currentGame.user == "stormtropper") {
+        if (currentGame.computer == "greenLightSaber" && currentGame.user == "stormtroopper") {
             console.log("Computadora");
             
             return -1
@@ -178,7 +200,7 @@ export function MovesPage() {
             <div className={css["computer-move-container"]}>
                 {computerMoveVal == "deathStar"? <DeathStar height={90}></DeathStar>: null
                 || computerMoveVal == "redLightSaber"? <RedLightSaber></RedLightSaber>: null 
-                || computerMoveVal == "stormtropper"? <StormtrooperGun height={55}></StormtrooperGun>: null 
+                || computerMoveVal == "stormtroopper"? <StormtrooperGun height={55}></StormtrooperGun>: null 
                 || computerMoveVal == "theForce"? <Force width={130}></Force>: null
                 || computerMoveVal == "greenLightSaber"? <GreenLightSaber></GreenLightSaber>: null 
                 || computerMoveVal == "hanSoloGun"? <HanSoloGun height={55}></HanSoloGun>: null}
@@ -187,7 +209,7 @@ export function MovesPage() {
             <div className={css["user-move-container"]}>
                 {userMoveVal == "deathStar"? <DeathStar height={90}></DeathStar>: null
                 || userMoveVal == "redLightSaber"? <RedLightSaber></RedLightSaber>: null 
-                || userMoveVal == "stormtropper"? <StormtrooperGun height={55}></StormtrooperGun>: null 
+                || userMoveVal == "stormtroopper"? <StormtrooperGun height={55}></StormtrooperGun>: null 
                 || userMoveVal == "theForce"? <Force width={130}></Force>: null
                 || userMoveVal == "greenLightSaber"? <GreenLightSaber></GreenLightSaber>: null 
                 || userMoveVal == "hanSoloGun"? <HanSoloGun height={55}></HanSoloGun>: null}
