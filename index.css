@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Podkova&display=swap');
+
+body {
+    overscroll-behavior-x: none;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+  --principal: #F6DE00;
+  --secondary: #2A3352;
+  --transparent: #8080809c;
+  
+  --principal-inverted: linear-gradient(305deg, #5e7284, #fff);
+  --button: linear-gradient(
+    87deg,
+    rgba(216, 190, 113, 1) 0%,
+    rgba(231, 217, 178, 1) 100%
+  );
+  --black: #000;
+  --dark: #363636;
+  --white: #fff;
+  --grey: rgb(129, 129, 129);
+  --grey-button: #cdcdcd;
+  --link: #4730ff;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --gradient: linear-gradient( 90deg, #52677b 25.8%, #d0bf82 54.11%, #ffffff 150.33% );
+  --found-tag: #34ff1a;
+  --max-width: 1024px;
+  --nav-menu: #d2d2d2; 
+}

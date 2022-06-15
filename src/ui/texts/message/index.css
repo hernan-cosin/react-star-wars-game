@@ -1,0 +1,8 @@
+.text {
+    font-family: 'Odibee Sans', cursive;
+    font-size: 32px;
+    display: inline;
+    color: var(--principal);
+    margin: 0;
+    text-align: center;
+}

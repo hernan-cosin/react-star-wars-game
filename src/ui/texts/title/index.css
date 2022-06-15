@@ -1,0 +1,10 @@
+.text {
+    font-family: 'Odibee Sans', cursive;
+    font-size: 42px;
+    display: inline;
+    color: var(--white);
+    margin: 0;
+}
+.yellow {
+    color: var(--principal);
+}

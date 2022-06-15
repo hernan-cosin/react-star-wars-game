@@ -1,0 +1,10 @@
+<svg width="311" height="54" viewBox="0 0 311 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 17V2H55.5V17H28V23.5H45V32H28V52H12V17H2Z" stroke="#F6DE00" stroke-width="3"/>
+<path d="M72.4994 2H55.9994C55.9994 2 55.8607 37.1411 55.9994 37.6161C62.5 59.8761 105 53.4455 105.499 37.6161L105.499 2H88.4994C88.4994 2 88.709 34.6695 88.4994 35.6374C87 42.5628 74.5 42.5628 72.4994 35.6374V2Z" stroke="#F6DE00" stroke-width="3"/>
+<path d="M155 2V50.5H172.5C172.5 45.3333 172.7 34 173.5 36C174.3 38 183.833 47 188.5 50.5H207V34.5C207 34.5 192.191 34.5885 195 32.5C214.5 18 199.5 5.66667 190 2H155Z" stroke="#F6DE00" stroke-width="3" stroke-linejoin="round"/>
+<path d="M172 23.5V16H185.5C188 16 188 23.5 185.5 23.5H172Z" stroke="#F6DE00" stroke-width="3" stroke-linejoin="round"/>
+<path d="M152 2H107V50.5H152V35.5052H123.5V31.8969H140.5V21.0722H123.5V17.4639H152V2Z" stroke="#F6DE00" stroke-width="3" stroke-linejoin="round"/>
+<path d="M255 2H210V17H232.5L210 37V50H255V37H232.5L255 17V2Z" stroke="#F6DE00" stroke-width="3"/>
+<path d="M274 49.5H256L269 3H296L308.5 49.5H290.5L288.5 43.5H276L274 49.5Z" stroke="#F6DE00" stroke-width="3"/>
+<path d="M278.5 31.5L282 19L285.5 31.5H278.5Z" stroke="#F6DE00" stroke-width="3"/>
+</svg>

@@ -1,0 +1,41 @@
+.confirm-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: var(--transparent);
+    width: 100%;
+    backdrop-filter: blur(8px);
+}
+
+.custom-content {
+    max-width: 500px;
+    border: solid var(--principal);
+    margin: 0 auto;
+    height: 200px;
+    border-radius: 5px;
+    background-color: var(--secondary);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 35px;
+}
+
+.button {
+    flex-grow: 1;
+    font-family: 'Odibee Sans', cursive;
+    font-size: 32px;
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 4px;
+    cursor: pointer;
+}

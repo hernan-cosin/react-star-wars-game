@@ -1,0 +1,52 @@
+ .rules-container {
+    padding: 40px 0 0 0;
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+    top: 100vh;
+}
+
+.title {
+    display: block;
+    margin: 0 auto 30px auto;
+    width: fit-content;
+}
+
+.moves-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    row-gap: 20px;
+    margin: 30px auto 0 auto;
+}
+
+.move-container {
+    display: flex;
+    column-gap: 40px;
+}
+
+.move-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text1 {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.text-container {
+    max-width: 200px;
+    margin: 0 0 10px 0;
+}
+
+.back-button {
+    margin: 50px 0 0 0;
+}

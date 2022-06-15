@@ -1,0 +1,30 @@
+.results-container {
+    padding: 40px 0 0 0;
+}
+
+@media (min-width: 1340px) {
+    .results-container {
+        max-width: 1280px;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+.play-again-button {
+    margin: 20px auto 0 auto;
+}
+
+.status-bar {
+    margin: 0 0px 0 auto;
+    max-width: 300px;
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    right: 5px;
+    top: 5px;
+}
+
+.score-board {
+    margin: 80px auto 0 auto;
+}
+

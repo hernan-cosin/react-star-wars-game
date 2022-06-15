@@ -1,0 +1,10 @@
+.red-saber {
+}
+
+.red-saber.disabled {
+    opacity: .5;
+}
+
+.selectable {
+    cursor: pointer;
+}

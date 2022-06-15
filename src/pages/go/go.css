@@ -1,0 +1,45 @@
+.go-container {
+    padding: 40px 0 0 0;
+}
+
+@media (min-width: 1340px) {
+    .go-container {
+        max-width: 1280px;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+.status-bar {
+    margin: 0 0px 0 auto;
+    max-width: 300px;
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    right: 5px;
+    top: 5px;
+}
+
+.moves-container {
+    max-width: 350px;
+    margin: 60px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .buttons-container {
+    max-width: 299px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin: 50px auto 70px auto;
+}
+
+.decoration-container {
+    width: 350px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: 0 auto;
+} */

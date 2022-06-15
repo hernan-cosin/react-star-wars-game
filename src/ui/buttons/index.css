@@ -1,0 +1,23 @@
+.button {
+    font-family: 'Odibee Sans', cursive;
+    color: var(--white);
+    background-color: var(--secondary);
+    border: 5px solid var(--principal);
+    min-width: 200px;
+    max-width: 310px;
+    width: 100%;
+    border-radius: 5px;
+    height: 55px;
+    font-size: 32px;
+    display: block;
+    cursor: pointer;
+}
+
+.button.disabled {
+    opacity: .5;
+}
+
+.button.disabled-exclusive {
+    opacity: .5;
+    pointer-events: none;
+}

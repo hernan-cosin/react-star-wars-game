@@ -1,0 +1,7 @@
+.force {
+    width: 190px;
+}
+
+.selectable {
+    cursor: pointer;
+}
