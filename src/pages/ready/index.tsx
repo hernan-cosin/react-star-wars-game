@@ -41,7 +41,7 @@ export function ReadyPage() {
                 <StormtrooperGun height={55}></StormtrooperGun>
             </div> : 
             <div className={css["moves-container"]}>
-                <Force width={130}></Force>
+                <Force selectable={false} width={130} ></Force>
                 <GreenLightSaber></GreenLightSaber>
                 <HanSoloGun height={55}></HanSoloGun>
             </div>

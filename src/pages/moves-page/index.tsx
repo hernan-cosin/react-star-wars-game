@@ -124,9 +124,9 @@ export function MovesPage() {
             return 1
         }
         if (currentGame.computer == "stormtroopper" && currentGame.user == "theForce") {
-            console.log("Usuario");
+            console.log("computadora");
             
-            return 1
+            return -1
         }
         if (currentGame.computer == "redLightSaber" && currentGame.user == "theForce") {
             console.log("Usuario");

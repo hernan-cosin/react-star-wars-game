@@ -10,5 +10,5 @@ type props = {
 }
 
 export function Force(p:props) {
-    return <img src={force} className={css.force + " " + p.selectable? css["selectable"] : ""} onClick={p.onClick? p.onClick : null} style={{width: p.width + "px", height: p.height + "px"}} alt="" />
+    return <img src={force} className={css.force + " " + `${p.selectable? css["selectable"] : ""}`} onClick={p.onClick? p.onClick : null} style={{width: p.width + "px", height: p.height + "px"}} alt="" />
 }

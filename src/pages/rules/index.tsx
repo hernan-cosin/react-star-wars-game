@@ -57,13 +57,13 @@ export function Rules() {
                 <div className={css["text-container"]}>
                         <Text>Las </Text><Text color="yellow">tijeras </Text><Text>del lado oscuro son 2 </Text><Text color="yellow">lightsaber rojos</Text><Text color="yellow"> cruzados:</Text>
                     </div>
-                    <RedLightSaber width={150}></RedLightSaber>
+                    <RedLightSaber width={150} className={css.redLightSaber}></RedLightSaber>
                 </div>
                 <div className={css["move-info"]}>
                         <div className={css["text-container"]}>
                             <Text>Las </Text><Text color="yellow">tijeras </Text><Text>de la fuerza son 2 </Text><Text color="yellow">lightsaber verdes</Text><Text color="yellow"> cruzados:</Text>
                         </div>
-                        <GreenLightSaber height={124}></GreenLightSaber>
+                        <GreenLightSaber height={124} className={css.greenLightSaber}></GreenLightSaber>
                 </div>
             </div>
                 <Button onClick={handleBackClick} className={css["back-button"]}>Volver</Button>
