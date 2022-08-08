@@ -10,7 +10,11 @@ import { Button } from "ui/buttons";
 import { SideStatusBar } from "components/status-bars";
 import { Message } from "ui/texts/message";
 import { useRecoilValue, useSetRecoilState } from "recoil"
-import { computerMove, side, userMove, currentGame, userWins, computerWins } from "atoms/atoms"
+import { computerMove, side, userMove, currentGame, userWins, computerWins, volume } from "atoms/atoms"
+import vaderLaugh from "media/vaderLaugh.mp3"
+import vaderScream from "media/vaderScream.mp3"
+import swing from 'media/swing.mp3';
+import { useSoundControl } from "custom-hooks";
 import css from "./moves-page.css"
 
 export function MovesPage() {   
@@ -27,6 +31,20 @@ export function MovesPage() {
     const [showMessage, setShowMessage] =  useState(false)
     const [message, setMessage] = useState("")
 
+    // audio
+    const atomVolumeVal = useRecoilValue(volume) // global state
+    const vaderLaughAudio = new Audio(vaderLaugh) // audio file
+    const vaderScreamAudio = new Audio(vaderScream) // audio file
+    const swingAudio = new Audio(swing) // audio file
+
+    const [audioUserWin, setAudioUserWin] = useState(false)
+    const [audioUserLoose, setAudioUserLoose] = useState(false)
+    const [playIsHovering, setPlayIsHovering] = useState(false);
+
+    useSoundControl(vaderLaughAudio, atomVolumeVal, audioUserLoose)
+    useSoundControl(vaderScreamAudio, atomVolumeVal, audioUserWin)
+    useSoundControl(swingAudio, atomVolumeVal,playIsHovering)
+
     useEffect(()=>{
         console.log("CURRENT GAME", currentGameAtom);
         const gano = whoWins(currentGameAtom)
@@ -35,6 +53,8 @@ export function MovesPage() {
             const sumar = [... computerWinVal]
             sumar.push(1)
             setСomputerWin(sumar)
+
+            setAudioUserLoose(true) //audio
 
             if (choosenSide == "darkSide") {
                 setMessage("¡Perdiste! No elejiste a tiempo")
@@ -48,6 +68,8 @@ export function MovesPage() {
             sumar.push(1)
             setUserWin(sumar)
             
+            setAudioUserWin(true) //audio
+
             if (choosenSide == "darkSide") {
                 setMessage("¡Ganaste! Un verdadero Sith Lord")
             }
@@ -59,6 +81,8 @@ export function MovesPage() {
             const sumar = [... computerWinVal]
             sumar.push(1)
             setСomputerWin(sumar)
+
+            setAudioUserLoose(true) //audio
 
             if (choosenSide == "darkSide") {
                 setMessage("¡Perdiste! Que tu lado oscuro no se rinda")
@@ -194,6 +218,15 @@ export function MovesPage() {
         navigate("/results")
     }
 
+    // enter handlers
+    function handleMouseEnterPlay() {
+        setPlayIsHovering(true);        
+    }
+    // leaves handlers
+    function handleMouseLeavePlay() {
+        setPlayIsHovering(false);
+    }
+
     return <section className={css["moves-page-container"]} id="moves-container">
         {<SideStatusBar disabled={true} className={css["status-bar"]} side={choosenSide == "darkSide" ? "darkSide" : "theForce"}></SideStatusBar>}
         <div className={css["moves-container"]}>
@@ -216,6 +249,6 @@ export function MovesPage() {
             </div>
             
         </div>
-            {showButton? <Button className={css["continue-button"]} onClick={handleContinueClick}>Continuar</Button> : null}
+            {showButton? <Button className={css["continue-button"]} onClick={handleContinueClick} onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay}>Continuar</Button> : null}
     </section>
 }

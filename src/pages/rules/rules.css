@@ -10,14 +10,6 @@
     top: 100vh;
 }
 
-@media (orientation: landscape) {
-    .background {
-        height: 200vh;
-    }
-}
-
-
-
 .title {
     display: block;
     margin: 0 auto 30px auto;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Podkova&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Podkova&display=swap&family=Libre+Franklin');
 
 body {
     overscroll-behavior-x: none;
@@ -17,8 +17,8 @@ body {
   --principal: #F6DE00;
   --secondary: #2A3352;
   --transparent: #8080809c;
-  
   --principal-inverted: linear-gradient(305deg, #5e7284, #fff);
+  --intro-blue: #1E52A4;
   --button: linear-gradient(
     87deg,
     rgba(216, 190, 113, 1) 0%,

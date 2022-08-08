@@ -17,7 +17,7 @@ export function Rules() {
     }
 
     return <section className={css["rules-container"]} id="rules-container">
-        <img src={bg} className={css.background} alt="" />
+        <img src={bg} className={css.background} alt="stars background" />
         <Title className={css.title}>Instrucciones</Title>
         <Text className={css.text1}>¿De qué lado estás?</Text>
         <Text className={css.text1}>Elegí entre El Lado oscuro o La Fuerza.</Text>
@@ -67,27 +67,6 @@ export function Rules() {
                 </div>
             </div>
                 <Button onClick={handleBackClick} className={css["back-button"]}>Volver</Button>
-            {/* </div>     */}
-
-            {/* <div className={css["dark-side-moves"]} id={"dark-side-moves"}>
-                <div className={css["dark-stone"]}>
-                    <div className={css["text-container"]}>
-                        <Text>La </Text><Text color="yellow">piedra </Text><Text>del lado oscuro es la 
-                        </Text><Text color="yellow"> Death Star:</Text>
-                    </div>
-                    <DeathStar/>
-                </div>
-                <div className={css["dark-stone"]}>
-                    <div className={css["text-container"]}>
-                        <Text>La </Text><Text color="yellow">piedra </Text><Text>del lado oscuro es la 
-                        </Text><Text color="yellow"> Death Star:</Text>
-                    </div>
-                    <DeathStar/>
-                </div>
-            </div>
-            <div className={css["the-force-moves"]} id={"the-force-moves"}>
-   
-            </div> */}
         </div>
     </section>
 }

@@ -10,6 +10,10 @@ import {SideStatusBar} from "components/status-bars"
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { Counter } from "components/counter";
 import { side, userMove, computerMove, noMoveSet, currentGame} from "atoms/atoms"
+import {volume} from "atoms/atoms"
+import rtwodtwo from "media/rtwodtwo.mp3"
+import {useSoundControl} from "custom-hooks"
+import {useMute} from "custom-hooks"
 import css from "./go.css"
 
 export function GoPage() {
@@ -21,7 +25,12 @@ export function GoPage() {
     const computerMoveAtom = useRecoilValue(computerMove)
     const userMoveAtom = useRecoilValue(userMove)
     const setCurrentGame = useSetRecoilState(currentGame)
-    
+    const atomVolumeVal = useRecoilValue(volume) // global state
+
+    const rtwodtwoAudio = new Audio(rtwodtwo)
+
+    useSoundControl(rtwodtwoAudio,atomVolumeVal, true)
+
     useEffect(()=>{
         if (computerMoveAtom && userMoveAtom) {
             setCurrentGame({computer: computerMoveAtom, user: userMoveAtom})
@@ -32,37 +41,44 @@ export function GoPage() {
     function timeOut() {
         setTimeout(() => {
             navigate("/moves")                
+        // }, 1200);
         }, 750);
     }
     
     function handleDeathStarClick() {
+        rtwodtwoAudio.pause()
         getComputerMove(choosenSide)
         setUserMove("deathStar")
         timeOut()
     }
     
     function handleRedLightSaberClick() {
+        rtwodtwoAudio.pause()
         getComputerMove(choosenSide)
         setUserMove("redLightSaber")
         timeOut()
     }
     
     function handleStormtrooperClick() {
+        rtwodtwoAudio.pause()
         getComputerMove(choosenSide)
         setUserMove("stormtroopper")
         timeOut()
     }
     function handleTheForceClick() {
+        rtwodtwoAudio.pause()
         getComputerMove(choosenSide)
         setUserMove("theForce")
         timeOut()
     }
     function handleGreenLightSaberClick() {
+        rtwodtwoAudio.pause()
         getComputerMove(choosenSide)
         setUserMove("greenLightSaber")
         timeOut()
     }
     function handleHanSoloGunClick() {
+        rtwodtwoAudio.pause()
         getComputerMove(choosenSide)
         setUserMove("hanSoloGun")
         timeOut()

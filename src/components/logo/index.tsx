@@ -5,8 +5,12 @@ import {O} from "ui/title/o"
 import {Tijera} from "ui/title/tijera"
 import css from "./logo.css"
 
-export function Logo() {    
-    return <section className={css["title-container"]} id="title-container">
+type props = {
+    className?: string
+}
+
+export function Logo(p: props) {    
+    return <section className={css["title-container"] + " " + `${p.className? p.className : ""}`} id="title-container">
         <Piedra></Piedra>
         <div>
             <Papel></Papel>

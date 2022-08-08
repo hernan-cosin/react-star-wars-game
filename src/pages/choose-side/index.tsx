@@ -5,10 +5,20 @@ import { Button } from "ui/buttons";
 import { GreenLightSaber } from "ui/ligthsabers/green";
 import { RedLightSaber } from "ui/ligthsabers/red";
 import { useSetRecoilState } from "recoil";
-import {side, userWins, computerWins} from "atoms/atoms"
+import {side, userWins, computerWins, volume} from "atoms/atoms"
+import { useRecoilValue } from "recoil";
+import threeLightsabers from 'media/threelightsabers.mp3';
+import twoLightsabers from 'media/twolightsabers.mp3';
+import lightsabersHum from "media/lightsabersHum.mp3"
+import {useSoundControl} from "custom-hooks"
 import css from "./choose-side.css"
 
 export function ChooseSide() {
+    const atomVolumeVal = useRecoilValue(volume) // global state
+    const threeSwingAudio = new Audio(threeLightsabers) // audio file
+    const twoSwingAudio = new Audio(twoLightsabers) // audio file
+    const lightsaber = new Audio(lightsabersHum) // audio file
+
     const navigate = useNavigate()
 
     const [darkChoice, setDarkChoice] = useState(true)
@@ -19,6 +29,31 @@ export function ChooseSide() {
     const setSideAtom = useSetRecoilState(side)
     const resetUserWins = useSetRecoilState(userWins)
     const resetComputerWins = useSetRecoilState(computerWins)
+
+    // state for hovering buttons
+    const [darkButtonIsHovering, setDarkButtonIsHovering] = useState(false)
+    const [forceButtonIsHovering, setforceButtonIsHovering] = useState(false)
+    const [continueButtonIsHovering, setcontinueButtonIsHovering] = useState(false)
+
+    function handleMouseEnterDark() {
+        setDarkButtonIsHovering(true)
+    }
+    function handleMouseLeaveDark() {
+        setDarkButtonIsHovering(false)
+    }
+
+    function handleMouseEnterForce() {
+        setforceButtonIsHovering(true)
+    }
+    function handleMouseLeaveForce() {
+        setforceButtonIsHovering(false)
+    }
+    function handleMouseEnterContinue() {
+        setcontinueButtonIsHovering(true)
+    }
+    function handleMouseLeaveContinue() {
+        setcontinueButtonIsHovering(false)
+    }
 
     useEffect(()=>{
         resetUserWins([0])
@@ -65,6 +100,11 @@ export function ChooseSide() {
         }
     }
 
+    useSoundControl(threeSwingAudio, atomVolumeVal, darkButtonIsHovering)  
+    useSoundControl(twoSwingAudio, atomVolumeVal, forceButtonIsHovering)           
+    useSoundControl(lightsaber, atomVolumeVal, continueButtonIsHovering)
+
+
     function handleStartClick() {
         navigate("/ready")
     }
@@ -77,10 +117,10 @@ export function ChooseSide() {
                 <GreenLightSaber disabled={forceChoice} width={180}></GreenLightSaber>
             </div>
             <div className={css["side-buttons"]}>
-                <Button onClick={handleDarkChoice} disabled={darkButtonDisabled}>Dark side</Button>
-                <Button onClick={handleForceChoice} disabled={forceButtonDisabled}>Jedi</Button>
+                <Button onMouseEnter={handleMouseEnterDark} onMouseLeave={handleMouseLeaveDark} onClick={handleDarkChoice} disabled={darkButtonDisabled}>Dark side</Button>
+                <Button onMouseEnter={handleMouseEnterForce} onMouseLeave={handleMouseLeaveForce} onClick={handleForceChoice} disabled={forceButtonDisabled}>Jedi</Button>
             </div>
         </div>
-            <Button className={css["start-button"]} onClick={handleStartClick} disabledExclusive={startButtonDisabled}>Siguiente</Button>
+            <Button className={css["start-button"]} onMouseEnter={handleMouseEnterContinue} onMouseLeave={handleMouseLeaveContinue} onClick={handleStartClick} disabledExclusive={startButtonDisabled}>Siguiente</Button>
     </section>
 }

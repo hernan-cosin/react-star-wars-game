@@ -11,15 +11,6 @@ import { ReadyPage } from "pages/ready";
 import { GoPage } from "pages/go";
 import { ResultsPage } from "pages/results-page";
 import { MovesPage } from "pages/moves-page"
-// import { NearBy } from "pages/near-by";
-// import { Login } from "pages/login";
-// import { LoginPass } from "pages/login-pass";
-// import { MyData } from "pages/my-data";
-// import { MyReports } from "pages/my-reports";
-// import {ReportPet} from "pages/report-pet"
-// import { PrivateRoute } from "./privateRoute";
-// import { NewUser } from "pages/my-data/new-user";
-
 
 export function MyRouter() {
     return  <React.StrictMode> 
@@ -33,28 +24,6 @@ export function MyRouter() {
               <Route path="/results" element={<ResultsPage />}></Route>
               <Route path="/moves" element={<MovesPage />}></Route>
             </Route>
-              {/* <Route path="/" element={<Layout />}>
-                <Route index element={<Home />}></Route>
-                <Route path="/near-by/:lat/:lng" element={<NearBy />}></Route>
-                <Route path="/login" element={<Login />}></Route>
-                <Route path="/login-pass" element={<LoginPass />}></Route>
-                <Route path="/me" element={
-                  <PrivateRoute>
-                    <MyData />
-                  </PrivateRoute>
-                }></Route>
-                <Route path="/me/reports" element={
-                  <PrivateRoute>
-                    <MyReports />
-                  </PrivateRoute>
-                }></Route>
-                <Route path="/me/report" element={
-                  <PrivateRoute>
-                    <ReportPet/>
-                  </PrivateRoute>
-                }></Route>
-                <Route path="/me/new" element={<NewUser />}></Route>
-              </Route> */}
           </Routes>
       </React.StrictMode>
 }

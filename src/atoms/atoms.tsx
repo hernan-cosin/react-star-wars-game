@@ -38,3 +38,7 @@ export const userWins = atom({
   default: [0]
 })
 
+export const volume = atom ({
+  key: "volume",
+  default: false
+})
