@@ -17,13 +17,13 @@ export function MyRouter() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />}></Route>
-              <Route path="/rules" element={<Rules />}></Route>
               <Route path="/choose-side" element={<ChooseSide />}></Route>
               <Route path="/ready" element={<ReadyPage />}></Route>
               <Route path="/go" element={<GoPage />}></Route>
               <Route path="/results" element={<ResultsPage />}></Route>
               <Route path="/moves" element={<MovesPage />}></Route>
             </Route>
+              <Route path="/rules" element={<Rules />}></Route>
           </Routes>
       </React.StrictMode>
 }
