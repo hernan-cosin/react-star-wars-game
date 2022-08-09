@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { userMove, noMoveSet } from "atoms/atoms";
+import { userMove } from "atoms/atoms";
 import css from "./counter.css"
 
 type props = {
     counterStartAt: number
-    // onTimeOut?: ()=> void
 }
 
 export function Counter(p:props) {
     const navigate = useNavigate()
-    let [counter, setCounter] = useState(p.counterStartAt)
+    const counterStartAt = p.counterStartAt
+
+    let [counter, setCounter] = useState(counterStartAt)
     const setUserMove = useSetRecoilState(userMove)
-    // const setNoMoveSet = useSetRecoilState(noMoveSet)
 
     function handleTimeOut() {
+        // user no eligió a tiempo
         setUserMove("null")
         navigate("/moves")
     }
@@ -24,7 +25,6 @@ export function Counter(p:props) {
     setTimeout(() => {
         counter =-- counter 
         setCounter(counter)
-        // console.log(counter);
     }, 1000);
 
     if (counter == 0) {
@@ -32,7 +32,6 @@ export function Counter(p:props) {
         setTimeout(() => {
             handleTimeOut()
         }, 500);
-        // setNoMoveSet(true)
     }
 
     return <section className={css["counter-container"]}>

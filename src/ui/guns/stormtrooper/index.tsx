@@ -3,12 +3,19 @@ import stormtrooperGun from 'media/stormtrooper-gun.svg';
 import css from "./index.css"
 
 type props = {
-    width?: number
-    height?: number
     selectable?: boolean
     onClick?: ()=> void
+    width?: number
+    height?: number
 }
 
 export function StormtrooperGun(p:props) {
-    return <img src={stormtrooperGun} className={p.selectable? css["selectable"] : ""} onClick={p.onClick? p.onClick : null} style={{width: p.width + "px", height: p.height + "px"}} alt="" />
+    const selectable = p.selectable? css["selectable"] : ""
+    const onClick = p.onClick? p.onClick : null
+    const style = {
+        width: p.width + "px", 
+        height: p.height + "px"
+    }
+    
+    return <img src={stormtrooperGun} alt="stormtrooper gun image" className={selectable} onClick={onClick} style={style} />
 }

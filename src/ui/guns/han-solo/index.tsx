@@ -10,5 +10,12 @@ type props = {
 }
 
 export function HanSoloGun(p:props) {
-    return <img src={hanSolo} className={p.selectable? css.selectable : ""} onClick={p.onClick? p.onClick : null} style={{width: p.width + "px", height: p.height + "px"}} alt="" />
+    const selectable = p.selectable? css["selectable"] : ""
+    const onClick = p.onClick? p.onClick : null
+    const style = {
+        width: p.width + "px", 
+        height: p.height + "px"
+    }
+    
+    return <img src={hanSolo} alt="han solo gun image" className={selectable} onClick={onClick} style={style} />
 }

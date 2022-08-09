@@ -18,6 +18,11 @@ export function VolumeController() {
     }
 
     return <>
-       { !atomVolumeVal? <img src={volumeMute} className={css.vol + " " + css.mute} onClick={handleMuteClick} alt="mute icon" /> : <img src={volumeFull} className={css.vol + " " + css.full} onClick={handleFullClick} alt="audio icon" />}
+       { 
+       !atomVolumeVal?
+        <img src={volumeMute} className={css.vol + " " + css.mute} onClick={handleMuteClick} alt="mute icon" /> 
+       :
+        <img src={volumeFull} className={css.vol + " " + css.full} onClick={handleFullClick} alt="audio icon" />
+        }
     </>
 }

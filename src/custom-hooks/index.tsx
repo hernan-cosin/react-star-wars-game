@@ -14,15 +14,3 @@ export function useSoundControl(audio, globalAudioStatus, elementStatus?) {
         }
     }, [elementStatus])
 }
-
-export function useMute(audio, globalAudioStatus, mute) {
-    useEffect(()=>{
-        if (!globalAudioStatus) {
-            // if muted dont play
-            return 
-        } 
-        if (mute) {
-            audio.pause()
-        }
-    })
-}

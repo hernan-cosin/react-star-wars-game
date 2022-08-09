@@ -8,12 +8,17 @@ type props = {
     disabled?: boolean
     disabledExclusive?: boolean
     onMouseEnter?: ()=>void
-    onMouseLeave?
+    onMouseLeave?: ()=>void
 }
 
 export function Button(p: props) {
-    const disabled = p.disabled
-    const disabledExclusive = p.disabledExclusive
+    const children = p.children
+    const className = p.className? p.className : ""
+    const onClick = p.onClick? p.onClick : null
+    const disabled = p.disabled? p.disabled : ""
+    const disabledExclusive = p.disabledExclusive? css["disabled-exclusive"] : ""
+    const onMouseEnter = p.onMouseEnter? p.onMouseEnter : null
+    const onMouseLeave = p.onMouseLeave? p.onMouseLeave : null
 
-    return <button className={`${p.className? p.className : ""}` + " " + css.button + " " + `${disabled? css["disabled"] : ""}` + " " + `${disabledExclusive? css["disabled-exclusive"] : ""}`} onClick={p.onClick? p.onClick : null} onMouseEnter={p.onMouseEnter? p.onMouseEnter : null} onMouseLeave={p.onMouseLeave? p.onMouseLeave : null}>{p.children}</button>
+    return <button className={className + " " + css.button + " " + disabled + " " + disabledExclusive} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>{children}</button>
 }

@@ -9,12 +9,16 @@ type props = {
 }
 
 export function CustomConfirm(p:props) {
+    const message = p.message
+    const onConfirm = p.onConfirm
+    const onCancel = p.onCancel
+
     return <div className={css["confirm-container"]}>
         <div className={css["custom-content"]}>
-            <Text>{p.message}</Text>
+            <Text>{message}</Text>
         <div className={css["buttons-container"]}>
-            <button className={css["button"]} onClick={p.onConfirm}>Si</button>
-            <button className={css["button"]} onClick={p.onCancel}>Cancelar</button>
+            <button className={css["button"]} onClick={onConfirm}>Si</button>
+            <button className={css["button"]} onClick={onCancel}>Cancelar</button>
         </div>
         </div>
   </div>

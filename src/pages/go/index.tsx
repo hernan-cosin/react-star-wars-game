@@ -13,7 +13,6 @@ import { side, userMove, computerMove, noMoveSet, currentGame} from "atoms/atoms
 import {volume} from "atoms/atoms"
 import rtwodtwo from "media/rtwodtwo.mp3"
 import {useSoundControl} from "custom-hooks"
-import {useMute} from "custom-hooks"
 import css from "./go.css"
 
 export function GoPage() {

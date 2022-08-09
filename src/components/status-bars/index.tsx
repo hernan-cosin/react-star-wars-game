@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import darth from "media/vader.jpg"
 import yoda from "media/yoda.jpg"
 import { Button } from "ui/buttons"
 import { CustomConfirm } from "components/custom-confirm"
-import { useRecoilValue } from "recoil"
-import {userWins} from "atoms/atoms"
 import css from "./index.css"
 
 type props = {
-    side: "darkSide" | "theForce"
     className: string
+    side: "darkSide" | "theForce"
     disabled: boolean
 }
 
 export function SideStatusBar(p:props) {
     const navigate = useNavigate()
+
     const side = p.side
     const disabled = p.disabled
+    
     const [customConfirm, setCustomConfirm] = useState(false)
     const [redirectTo, setRedirectTo] = useState("")
-    const userWinsVal = useRecoilValue(userWins)
-
-    useEffect(()=>{
-        console.log("BAR COMPONENT", side);
-    }, [side])
 
     const [openButtons, setOpenButtons] = useState(false)
 

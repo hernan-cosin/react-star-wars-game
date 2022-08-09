@@ -9,8 +9,10 @@ type props = {
     className?: string
 }
 
-export function Logo(p: props) {    
-    return <section className={css["title-container"] + " " + `${p.className? p.className : ""}`} id="title-container">
+export function Logo(p: props) {  
+    const className =   p.className? p.className : ""
+    
+    return <section className={css["title-container"] + " " + className} id="title-container">
         <Piedra></Piedra>
         <div>
             <Papel></Papel>

@@ -32,14 +32,6 @@ export function ReadyPage() {
     function handleMouseLeavePlay() {
         setPlayIsHovering(false);
     }
-
-    useEffect(()=>{
-        console.log("READY PAGE",choosenSide);
-        
-        if (choosenSide == "darkSide") {
-
-        }
-    }, [choosenSide])
     
     function handleClick() {
         navigate("/go")

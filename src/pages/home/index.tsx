@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {Logo} from "components/logo"
+import { Logo } from "components/logo"
 import { Sable } from "ui/sable";
 import { DeathStar } from "ui/death-star";
 import { Button } from "ui/buttons";
-import {volume} from "atoms/atoms"
+import { volume } from "atoms/atoms"
 import { useRecoilValue } from "recoil";
 import swing from 'media/swing.mp3';
 import lightsabersHum from "media/lightsabersHum.mp3"
@@ -13,18 +13,17 @@ import { useSoundControl } from "custom-hooks";
 import css from "./home.css"
 
 export function Home() {
+    const navigate = useNavigate()
     const atomVolumeVal = useRecoilValue(volume) // global state
     const swingAudio = new Audio(swing) // audio file
-    const saberAudio = new Audio(lightsabersHum)
-    const vaderAudio = new Audio(vader)
+    const saberAudio = new Audio(lightsabersHum) // audio file 
+    const vaderAudio = new Audio(vader) // audio file 
     
     // state for hovering buttons
     const [playIsHovering, setPlayIsHovering] = useState(false);
     const [instructionsIsHovering, setinstructionsIsHovering] = useState(false);
     const [saberIsHovering, setsaberIsHovering] = useState(false);
     const [starIsHovering, setStarIsHovering] = useState(false);
-
-    const navigate = useNavigate()
 
     function handlePlayClick() {
         navigate("/choose-side")
@@ -78,11 +77,11 @@ export function Home() {
         <Logo className={css.logo}></Logo>
         <section className={css["buttons-container"]}>
             <Button onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay} onClick={handlePlayClick}>Jugar</Button>
-            <Button onMouseEnter={handleMouseEnterInstructions} onMouseLeave={handleMouseLeaveInstructions} onClick={handleRulesClick}>Instrucciones</Button>
+            <Button onMouseEnter={handleMouseEnterInstructions} onMouseLeave={handleMouseLeaveInstructions} onClick={handleRulesClick} >Instrucciones</Button>
         </section>
         <div className={css["decoration-container"]}>
-            <Sable onMouseEnter={handleMouseEnterSaber} onMouseLeave={handleMouseLeaveSaber}></Sable>
-            <DeathStar onMouseEnter={handleMouseEnterStar} onMouseLeave={handleMouseLeaveStar}></DeathStar>
+            <Sable onMouseEnter={handleMouseEnterSaber} onMouseLeave={handleMouseLeaveSaber} className={atomVolumeVal?css.sable : ""}></Sable>
+            <DeathStar onMouseEnter={handleMouseEnterStar} onMouseLeave={handleMouseLeaveStar} className={atomVolumeVal?css.deathstar : ""}></DeathStar>
         </div>
     </section>
 }

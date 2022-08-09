@@ -5,6 +5,7 @@ import css from "./index.css"
 type props = {
     width?: number
     height?: number
+    className?: string
     selectable?: boolean
     onClick?: ()=> void
     onMouseEnter?: ()=>void
@@ -12,5 +13,13 @@ type props = {
 }
 
 export function DeathStar(p:props) {
-    return <img src={deathStar} className={p.selectable? css["selectable"] : ""} onClick={p.onClick? p.onClick : null} style={{width: p.width + "px", height: p.height + "px"}} alt="" onMouseEnter={p.onMouseEnter? p.onMouseEnter : null} onMouseLeave={p.onMouseLeave? p.onMouseLeave : null}/>
+    const className = p.className? p.className : ""
+    const selectable = p.className? css.selectable : " "
+    const onClick = p.onClick? p.onClick : null
+    const style = {width: p.width + "px", height: p.height + "px"}
+    const onMouseEnter = p.onMouseEnter? p.onMouseEnter : null
+    const onMouseLeave = p.onMouseLeave? p.onMouseLeave : null
+
+
+    return <img src={deathStar} alt="death star image" className={`${selectable + " " + className}`} onClick={onClick} style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}/>
 }

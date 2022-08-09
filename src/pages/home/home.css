@@ -10,6 +10,14 @@
     margin: 50px auto 70px auto;
 }
 
+.deathstar {
+    cursor: pointer;
+}
+
+.sable {
+    cursor: pointer;
+}
+
 .decoration-container {
     max-width: 350px;
     display: flex;

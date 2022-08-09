@@ -7,5 +7,9 @@ type props = {
     color?: "yellow"
 }
 export function Text(p:props) {
-    return <p className={css.text + " " +  `${ p.className? p.className : ""}` + " " + `${ p.color == "yellow"? css.yellow : ""}`}>{p.children}</p>
+    const children = p.children
+    const className = p.className? p.className : ""
+    const color = p.color == "yellow"? css.yellow : ""
+    
+    return <p className={css.text + " " +  className + " " + color}>{children}</p>
 } 

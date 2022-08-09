@@ -14,18 +14,19 @@ import {useSoundControl} from "custom-hooks"
 import css from "./choose-side.css"
 
 export function ChooseSide() {
+    const navigate = useNavigate()
     const atomVolumeVal = useRecoilValue(volume) // global state
     const threeSwingAudio = new Audio(threeLightsabers) // audio file
     const twoSwingAudio = new Audio(twoLightsabers) // audio file
     const lightsaber = new Audio(lightsabersHum) // audio file
 
-    const navigate = useNavigate()
 
     const [darkChoice, setDarkChoice] = useState(true)
     const [forceChoice, setForceChoice] = useState(true)
     const [darkButtonDisabled, setDarkButtonDisabled] = useState(false)
     const [forceButtonDisabled, setForceButtonDidabled] = useState(false)
     const [startButtonDisabled, setStartButtonDisabled] = useState(true)
+    
     const setSideAtom = useSetRecoilState(side)
     const resetUserWins = useSetRecoilState(userWins)
     const resetComputerWins = useSetRecoilState(computerWins)

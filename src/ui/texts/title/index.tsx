@@ -6,5 +6,8 @@ type props = {
     className?: string
 }
 export function Title(p:props) {
-    return <p className={css.text + " " + `${ p.className? p.className : ""}`}>{p.children}</p>
+    const children = p.children
+    const className = p.className? p.className : ""
+
+    return <p className={css.text + " " + className}>{children}</p>
 } 
