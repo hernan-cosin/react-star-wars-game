@@ -16,3 +16,9 @@
     position: absolute;
     z-index: -1;
 }
+
+@media (orientation: landscape) and (max-height: 470px) {
+    .background-image {
+        height: 200vh;
+    }
+}

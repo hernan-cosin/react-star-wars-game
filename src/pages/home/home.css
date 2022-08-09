@@ -1,5 +1,17 @@
 .home-container {
-    padding: 40px 0 0 0;
+    padding: 20px 0 0 0;
+}
+
+@media (min-width: 380px) {
+    .home-container {
+        padding: 40px 0 0 0;
+    }
+}
+
+@media (orientation: landscape) {
+    .home-container {
+      padding: 0 0 20px 0;
+    }
 }
 
 .buttons-container {
@@ -8,6 +20,13 @@
     flex-direction: column;
     row-gap: 15px;
     margin: 50px auto 70px auto;
+}
+
+@media (orientation: landscape) {
+    .buttons-container {
+        margin: 20px auto 20px auto;
+      padding: 0;
+    }
 }
 
 .deathstar {
