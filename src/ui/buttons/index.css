@@ -3,7 +3,6 @@
     color: var(--white);
     background-color: var(--secondary);
     border: 5px solid var(--principal);
-    min-width: 200px;
     max-width: 310px;
     width: 100%;
     border-radius: 5px;

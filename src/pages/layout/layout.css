@@ -22,3 +22,9 @@
         height: 200vh;
     }
 }
+
+@media (orientation: landscape) and (min-height: 150px) and (max-height: 469px) {
+    .background-image {
+        height: 380vh;
+    }
+}
