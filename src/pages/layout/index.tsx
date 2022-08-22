@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { VolumeController } from "components/volume-controller";
-import bg from 'media/bg.jpg';
+import bg from 'media/bg.webp';
 import  css from "./layout.css"
 
 export function Layout() {    

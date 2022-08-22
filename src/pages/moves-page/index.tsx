@@ -246,7 +246,11 @@ export function MovesPage() {
                 || computerMoveVal == "greenLightSaber"? <GreenLightSaber></GreenLightSaber>: null 
                 || computerMoveVal == "hanSoloGun"? <HanSoloGun height={55}></HanSoloGun>: null}
             </div>
-            {showMessage? <Message>{message}</Message> : null}
+            <div className={css.message}>
+                {showMessage? <Message  className={css.message}>{message}</Message> : null}
+
+            </div>
+            {/* <Message  className={css.message}>{message}</Message> */}
             <div className={css["user-move-container"]}>
                 {userMoveVal == "deathStar"? <DeathStar height={90}></DeathStar>: null
                 || userMoveVal == "redLightSaber"? <RedLightSaber></RedLightSaber>: null 

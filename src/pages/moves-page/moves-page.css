@@ -46,6 +46,12 @@
     }
 }
 
+.message {
+    min-width: 300px;
+    min-height: 70px;
+    text-align: center;
+}
+
 .user-move-container {
     position: relative;
     animation: slideUser 2s both;
