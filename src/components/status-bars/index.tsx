@@ -55,15 +55,15 @@ export function SideStatusBar(p:props) {
         </div>  
     </div> : 
     <div className={p.className}>
-        {customConfirm? <CustomConfirm message="Perderas tus puntos acumulados. ¿Deseas continuar?" onConfirm={onClickConfirm} onCancel={onClickCancel}></CustomConfirm> : null}
+        {customConfirm? <CustomConfirm message="You will lose your score. Still want to continue?" onConfirm={onClickConfirm} onCancel={onClickCancel}></CustomConfirm> : null}
         <div className={css["side-status-bar-container"]}>
             <img src={side == "darkSide"? darth : yoda} className={side == "darkSide"? css["img-dark"] : css["img-force"]} alt="" />
             <p className={css["side-status-bar-container-p"]} onClick={handleClick}>{side == "darkSide"? "DARK SIDE": "JEDI"}</p>
         </div> 
         <div className={css["buttons-container"] + " " + `${!openButtons? css["close"] : ""}`}>
-            <Button className={css["button"]} onClick={handleChangeClick}>Cambiar</Button>
-            <Button className={css["button"]} onClick={handleHomeClick}>Inicio</Button>
-            <Button className={css["button"]} onClick={handleCancelClick}>Cancelar</Button>
+            <Button className={css["button"]} onClick={handleChangeClick}>Change</Button>
+            <Button className={css["button"]} onClick={handleHomeClick}>Home</Button>
+            <Button className={css["button"]} onClick={handleCancelClick}>Cancel</Button>
         </div>
     </div>
 }

@@ -21,5 +21,5 @@ export function GreenLightSaber(p:props) {
         height: p.height + "px"
     }
 
-    return <img src={greenLightSaber} alt="green light saber image" className={css["green-saber"] + " " + disabled + " " + selectable + " " + className} onClick={onClick} style={style} />
+    return <img src={greenLightSaber} alt="green light saber image" width={140} height={124} className={css["green-saber"] + " " + disabled + " " + selectable + " " + className} onClick={onClick} style={style} />
 }

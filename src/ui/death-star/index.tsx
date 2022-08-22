@@ -21,5 +21,5 @@ export function DeathStar(p:props) {
     const onMouseLeave = p.onMouseLeave? p.onMouseLeave : null
 
 
-    return <img src={deathStar} alt="death star image" className={`${selectable + " " + className}`} onClick={onClick} style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}/>
+    return <img src={deathStar} alt="death star image" width={116} height={116} className={`${selectable + " " + className}`} onClick={onClick} style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}/>
 }

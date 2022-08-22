@@ -6,7 +6,7 @@ import { SideStatusBar } from "components/status-bars";
 import { useRecoilValue } from "recoil"
 import { side, computerWins, userWins, volume } from "atoms/atoms"
 import { useSoundControl } from "custom-hooks";
-import saber from 'media/light-saber.mp3';
+import saber from 'media/audio/light-saber.mp3';
 import css from "./results.css"
 
 export function ResultsPage() {
@@ -50,6 +50,6 @@ export function ResultsPage() {
     return <section className={css["results-container"]} id="go-container">
         {<SideStatusBar disabled={false} className={css["status-bar"]} side={choosenSide == "darkSide" ? "darkSide" : "theForce"}></SideStatusBar>}
         <ScoreBoard className={css["score-board"]} computer={computerLocalState} user={userLocalState}></ScoreBoard>
-        <Button className={css["play-again-button"]} onClick={handlePlayAgainClick} onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay}>Volver a jugar</Button>
+        <Button className={css["play-again-button"]} onClick={handlePlayAgainClick} onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay}>Play again</Button>
     </section>
 }

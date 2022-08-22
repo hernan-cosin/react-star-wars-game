@@ -1,4 +1,7 @@
 .title-container {
     width: fit-content;
     margin: 0 auto;
+    /* display: flex;
+    flex-direction: column;
+    row-gap: 15px; */
 }

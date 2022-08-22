@@ -16,22 +16,22 @@ export function Rules() {
     }
 
     return <section className={css["rules-container"]} id="rules-container">
-        <Title className={css.title}>Instrucciones</Title>
-        <Text className={css.text1}>¿De qué lado estás?</Text>
-        <Text className={css.text1}>Elegí entre El Lado oscuro o La Fuerza.</Text>
-        <Text className={css.text1}>Las reglas son las siguientes:</Text>
+        <Title className={css.title}>Instructions</Title>
+        <Text className={css.text1}>¿What side are you on?</Text>
+        <Text className={css.text1}>Choose between the dark side or the jedi.</Text>
+        <Text className={css.text1}>The rules are as follows:</Text>
          <div className={css["moves-container"]} id={"moves-container"}>
             <div className={css["move-container"]} id={"stone-container"}>
                 <div className={css["move-info"]}>
                     <div className={css["text-container"]}>
-                        <Text>La </Text><Text color="yellow">piedra </Text><Text>del lado oscuro es la 
+                        <Text>The dark side <Text color="yellow">rock </Text></Text><Text>is the  
                         </Text><Text color="yellow"> Death Star:</Text>
                     </div>
                     <DeathStar width={100}></DeathStar>
                 </div>
                 <div className={css["move-info"]}>
                         <div className={css["text-container"] + " " + css["jedi-text"]}>
-                            <Text>La </Text><Text color="yellow">piedra </Text><Text>de la fuerza es la </Text><Text color="yellow"> fuerza de Yoda:</Text>
+                            <Text>The jedi </Text><Text color="yellow">rock </Text><Text>is  </Text><Text color="yellow"> the yoda force:</Text>
                         </div>
                         <Force width={120}></Force>
                 </div>
@@ -39,13 +39,13 @@ export function Rules() {
             <div className={css["move-container"]} id={"paper-container"}>
             <div className={css["move-info"]}>
                 <div className={css["text-container"]}>
-                        <Text>El </Text><Text color="yellow">papel </Text><Text>del lado oscuro es un </Text><Text color="yellow">arma</Text><Text color="yellow"> stormtrooper:</Text>
+                        <Text>The dark side </Text><Text color="yellow">paper </Text><Text>is a </Text><Text color="yellow">stormtrooper gun:</Text>
                     </div>
                     <StormtrooperGun height={65}></StormtrooperGun>
                 </div>
                 <div className={css["move-info"]}>
                         <div className={css["text-container"] + " " + css["jedi-text"]}>
-                            <Text>El </Text><Text color="yellow">papel </Text><Text>de la fuerza es la </Text><Text color="yellow"> pistola </Text><Text>de </Text><Text color="yellow"> Han-Solo:</Text>
+                            <Text>The jedi </Text><Text color="yellow">paper </Text><Text>is the </Text><Text color="yellow"> Han-Solo gun:</Text>
                         </div>
                         <HanSoloGun height={60}></HanSoloGun>
                 </div>
@@ -53,18 +53,18 @@ export function Rules() {
             <div className={css["move-container"]} id={"scissors-container"}>
             <div className={css["move-info"]}>
                 <div className={css["text-container"]}>
-                        <Text>Las </Text><Text color="yellow">tijeras </Text><Text>del lado oscuro son 2 </Text><Text color="yellow">lightsaber rojos</Text><Text color="yellow"> cruzados:</Text>
+                        <Text>The dark side </Text><Text color="yellow">scissors </Text><Text>are 2 crossed </Text><Text color="yellow">red lightsabers:</Text>
                     </div>
                     <RedLightSaber width={140} className={css.redLightSaber}></RedLightSaber>
                 </div>
-                <div className={css["move-info"]}>
-                        <div className={css["text-container"] + " " + css["jedi-text"]}>
-                            <Text>Las </Text><Text color="yellow">tijeras </Text><Text>de la fuerza son 2 </Text><Text color="yellow">lightsaber verdes</Text><Text color="yellow"> cruzados:</Text>
-                        </div>
+                <div className={css["move-info"] + " " + css["move-info-greenLightSaber"]}>
+                    <div className={css["text-container"] + " " + css["jedi-text"]}>
+                        <Text>The jedi </Text><Text color="yellow">scissors </Text><Text>are 2 crossed </Text><Text color="yellow">green lightsabers:</Text>
+                    </div>
                         <GreenLightSaber height={110} className={css.greenLightSaber}></GreenLightSaber>
                 </div>
             </div>
-                <Button onClick={handleBackClick} className={css["back-button"]}>Volver</Button>
+                <Button onClick={handleBackClick} className={css["back-button"]}>Back</Button>
         </div>
     </section>
 }

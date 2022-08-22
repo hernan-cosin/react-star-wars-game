@@ -11,9 +11,9 @@ import { SideStatusBar } from "components/status-bars";
 import { Message } from "ui/texts/message";
 import { useRecoilValue, useSetRecoilState } from "recoil"
 import { computerMove, side, userMove, currentGame, userWins, computerWins, volume } from "atoms/atoms"
-import vaderLaugh from "media/vaderLaugh.mp3"
-import vaderScream from "media/vaderScream.mp3"
-import swing from 'media/swing.mp3';
+import vaderLaugh from "media/audio/vaderLaugh.mp3"
+import vaderScream from "media/audio/vaderScream.mp3"
+import swing from 'media/audio/swing.mp3';
 import { useSoundControl } from "custom-hooks";
 import css from "./moves-page.css"
 
@@ -57,10 +57,12 @@ export function MovesPage() {
             setAudioUserLoose(true) //audio
 
             if (choosenSide == "darkSide") {
-                setMessage("¡Perdiste! No elejiste a tiempo")
+                // setMessage("¡Perdiste! No elejiste a tiempo")
+                setMessage("You lost! You didn't choose on time")
             }
             if (choosenSide == "theForce") {
-                setMessage("¡Perdiste! No elejiste a tiempo")
+                // setMessage("¡Perdiste! No elejiste a tiempo")
+                setMessage("You lost! You didn't choose on time")
             }
         }
         if (gano == 1) {
@@ -71,10 +73,12 @@ export function MovesPage() {
             setAudioUserWin(true) //audio
 
             if (choosenSide == "darkSide") {
-                setMessage("¡Ganaste! Un verdadero Sith Lord")
+                // setMessage("¡Ganaste! Un verdadero Sith Lord")
+                setMessage("You won! A true Sith Lord")
             }
             if (choosenSide == "theForce") {
-                setMessage("¡Ganaste! La fuerza está contigo")
+                // setMessage("¡Ganaste! La fuerza está contigo")
+                setMessage("You won! May the Force be with you")
             }
         }
         if (gano == -1) {
@@ -85,19 +89,23 @@ export function MovesPage() {
             setAudioUserLoose(true) //audio
 
             if (choosenSide == "darkSide") {
-                setMessage("¡Perdiste! Que tu lado oscuro no se rinda")
+                // setMessage("¡Perdiste! Que tu lado oscuro no se rinda")
+                setMessage("You lost! May your dark side not give up")
             }
             if (choosenSide == "theForce") {
-                setMessage("¡Perdiste! Continua entrenando La Fuerza")
+                // setMessage("¡Perdiste! Continua entrenando La Fuerza")
+                setMessage("You lost! Keep up training the Force")
             }
         }
 
         if (gano == 0) {
             if (choosenSide == "darkSide") {
-                setMessage("¡EMPATE!")
+                // setMessage("¡EMPATE!")
+                setMessage("DRAW!")
             }
             if (choosenSide == "theForce") {
-                setMessage("¡EMPATE!")
+                // setMessage("¡EMPATE!")
+                setMessage("DRAW!")
             }
         }
     }, [currentGameAtom])
@@ -172,7 +180,7 @@ export function MovesPage() {
             
             return 1
         }
-        if (currentGame.computer == "stormtrooper" && currentGame.user == "greenLightSaber") {
+        if (currentGame.computer == "stormtroopper" && currentGame.user == "greenLightSaber") {
             console.log("Usuario");
             
             return 1
@@ -249,6 +257,6 @@ export function MovesPage() {
             </div>
             
         </div>
-            {showButton? <Button className={css["continue-button"]} onClick={handleContinueClick} onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay}>Continuar</Button> : null}
+            {showButton? <Button className={css["continue-button"]} onClick={handleContinueClick} onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay}>Continue</Button> : null}
     </section>
 }

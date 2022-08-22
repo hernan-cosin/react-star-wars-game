@@ -1,3 +1,11 @@
 .papel {
-    margin: 0 15px 0 0;
+    display: block;
+    width: 210px;
+    margin: 0 0 10px 0;
+}
+
+@media (min-width: 380px ) {
+    .papel {
+        width: unset;
+    }
 }

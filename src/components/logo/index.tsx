@@ -1,7 +1,6 @@
 import React from "react";
 import {Piedra} from "ui/title/piedra"
 import {Papel} from "ui/title/papel"
-import {O} from "ui/title/o"
 import {Tijera} from "ui/title/tijera"
 import css from "./logo.css"
 
@@ -14,10 +13,7 @@ export function Logo(p: props) {
     
     return <section className={css["title-container"] + " " + className} id="title-container">
         <Piedra></Piedra>
-        <div>
-            <Papel></Papel>
-            <O></O>
-        </div>
+        <Papel></Papel>
         <Tijera></Tijera>
     </section>
 }

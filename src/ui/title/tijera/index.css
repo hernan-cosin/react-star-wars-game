@@ -1,6 +1,12 @@
 .tijera {
-    min-width: 200px;
-    max-width: 275px;
-    width: 100%;
-    margin: 5px 0 0 0;
+    display: block;
+    width: 250px;
+    margin: 0 0 10px 0;
+}
+
+
+@media (min-width: 380px ) {
+    .tijera {
+        width: unset;
+    }
 }

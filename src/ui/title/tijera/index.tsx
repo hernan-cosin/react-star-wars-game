@@ -1,5 +1,5 @@
 import React from "react"
-import tijera from 'media/tijera.svg';
+import tijera from 'media/scissors.svg';
 import css from "./index.css"
 
 export function Tijera() {

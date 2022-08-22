@@ -1,5 +1,5 @@
 import React from "react"
-import piedra from 'media/piedra.svg';
+import piedra from 'media/rock.svg';
 import css from "./index.css"
 
 export function Piedra() {

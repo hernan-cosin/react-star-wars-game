@@ -11,7 +11,7 @@ import {SideStatusBar} from "components/status-bars"
 import { GreenLightSaber } from "ui/ligthsabers/green"
 import { useRecoilValue } from "recoil"
 import { side, volume } from "atoms/atoms"
-import swing from 'media/swing.mp3';
+import swing from 'media/audio/swing.mp3';
 import { useSoundControl } from "custom-hooks";
 import css from "./index.css"
 
@@ -42,8 +42,8 @@ export function ReadyPage() {
 
     return <section className={css["ready-container"]} id={"ready-container"}>
         {<SideStatusBar disabled={false} className={css["status-bar"]} side={choosenSide == "darkSide" ? "darkSide" : "theForce"}></SideStatusBar>}
-        <Title className={css.title}>Presioná comenzar y elegí tu ataque antes que pasen los 3 segundos.</Title>
-        <Button onClick={handleClick} className={css["start-button"]} onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay}>Comenzar</Button>
+        <Title className={css.title}>Press start and choose your atack before time runs out.</Title>
+        <Button onClick={handleClick} className={css["start-button"]} onMouseEnter={handleMouseEnterPlay} onMouseLeave={handleMouseLeavePlay}>Start</Button>
         {
             choosenSide == "darkSide"? 
             <div className={css["moves-container"]}>

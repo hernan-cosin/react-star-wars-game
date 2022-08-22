@@ -35,8 +35,9 @@
     align-items: center;
 }
 
-.jedi-text {
+.text-container.jedi-text {
     text-align: right;
+    max-width: 160px;
 }
 
 .text1 {
@@ -62,10 +63,17 @@
     margin: 50px 0 0 0;
 }
 
+@media (max-width: 400px) {
+    .move-info-greenLightSaber {
+        justify-content: space-between;
+    }
+    
+}
+
 .greenLightSaber {
-    align-self: flex-start;
+    align-self: center;
 }
 
 .redLightSaber {
-    align-self: flex-start;
+    align-self: center;
 }

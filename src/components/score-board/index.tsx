@@ -18,7 +18,7 @@ export function ScoreBoard(p: props) {
     const computer = p.computer
 
     return <div className={css["score-board-container"] + " " + className} id="score-board-container">
-        <Title className={css.title}>Puntaje</Title>
+        <Title className={css.title}>Score</Title>
         <Text className={css["results"]}>Dark Side: {choosenSide == "darkSide"? user : computer}</Text>
         <Text className={css["results"]}>Jedi: {choosenSide == "darkSide"? computer : user}</Text>
     </div>

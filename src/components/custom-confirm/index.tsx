@@ -17,8 +17,8 @@ export function CustomConfirm(p:props) {
         <div className={css["custom-content"]}>
             <Text>{message}</Text>
         <div className={css["buttons-container"]}>
-            <button className={css["button"]} onClick={onConfirm}>Si</button>
-            <button className={css["button"]} onClick={onCancel}>Cancelar</button>
+            <button className={css["button"]} onClick={onConfirm}>Yes</button>
+            <button className={css["button"]} onClick={onCancel}>Cancel</button>
         </div>
         </div>
   </div>

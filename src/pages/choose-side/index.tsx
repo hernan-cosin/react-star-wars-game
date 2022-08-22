@@ -7,9 +7,9 @@ import { RedLightSaber } from "ui/ligthsabers/red";
 import { useSetRecoilState } from "recoil";
 import {side, userWins, computerWins, volume} from "atoms/atoms"
 import { useRecoilValue } from "recoil";
-import threeLightsabers from 'media/threelightsabers.mp3';
-import twoLightsabers from 'media/twolightsabers.mp3';
-import lightsabersHum from "media/lightsabersHum.mp3"
+import threeLightsabers from 'media/audio/threelightsabers.mp3';
+import twoLightsabers from 'media/audio/twolightsabers.mp3';
+import lightsabersHum from "media/audio/lightsabersHum.mp3"
 import {useSoundControl} from "custom-hooks"
 import css from "./choose-side.css"
 
@@ -111,7 +111,7 @@ export function ChooseSide() {
     }
 
     return <section className={css["choose-side-container"]} id="choose-side-container">
-        <Title className={css.title}>Elejí un bando</Title>
+        <Title className={css.title}>Choose side</Title>
         <div className={css["choice-container"]} id={"choice-container"}>
             <div className={css["side-img"]}>
                 <RedLightSaber disabled={darkChoice} width={190}></RedLightSaber>
@@ -122,6 +122,6 @@ export function ChooseSide() {
                 <Button onMouseEnter={handleMouseEnterForce} onMouseLeave={handleMouseLeaveForce} onClick={handleForceChoice} disabled={forceButtonDisabled}>Jedi</Button>
             </div>
         </div>
-            <Button className={css["start-button"]} onMouseEnter={handleMouseEnterContinue} onMouseLeave={handleMouseLeaveContinue} onClick={handleStartClick} disabledExclusive={startButtonDisabled}>Siguiente</Button>
+            <Button className={css["start-button"]} onMouseEnter={handleMouseEnterContinue} onMouseLeave={handleMouseLeaveContinue} onClick={handleStartClick} disabledExclusive={startButtonDisabled}>Continue</Button>
     </section>
 }

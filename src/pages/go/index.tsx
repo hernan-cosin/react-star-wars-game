@@ -11,7 +11,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil"
 import { Counter } from "components/counter";
 import { side, userMove, computerMove, noMoveSet, currentGame} from "atoms/atoms"
 import {volume} from "atoms/atoms"
-import rtwodtwo from "media/rtwodtwo.mp3"
+import rtwodtwo from "media/audio/rtwodtwo.mp3"
 import {useSoundControl} from "custom-hooks"
 import css from "./go.css"
 
