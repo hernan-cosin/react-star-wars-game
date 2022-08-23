@@ -20,5 +20,5 @@ export function Button(p: props) {
     const onMouseEnter = p.onMouseEnter? p.onMouseEnter : null
     const onMouseLeave = p.onMouseLeave? p.onMouseLeave : null
 
-    return <button className={className + " " + css.button + " " + disabled + " " + disabledExclusive} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>{children}</button>
+    return <button title={children} className={className + " " + css.button + " " + disabled + " " + disabledExclusive} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>{children}</button>
 }
